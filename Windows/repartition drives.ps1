@@ -3,7 +3,7 @@ if (!$getdisk){ exit }
 $detected = $null
 foreach ($disk in (Get-Partition -DiskNumber $getdisk.DiskNumber)){
 $drive = $disk.DriveLetter + ":\users"
-$users = Get-ChildItem -Path $drive -Directory -ErrorAction SilentlyContinue | ?{$_.name -notlike 'admin*' -and $_.Name -notlike 'bagland' -and $_.Name -notlike 'tris*' -and $_.Name -ne 'Public'}
+$users = Get-ChildItem -Path $drive -Directory -ErrorAction SilentlyContinue | ?{$_.name -notlike 'admin*' -and $_.Name -notlike $env:USERNAME -and $_.Name -ne 'Public'}
 $detected = $detected + $users.name
 } 
 echo "The folloing users were detected:"
