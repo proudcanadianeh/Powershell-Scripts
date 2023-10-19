@@ -11,7 +11,7 @@ Invoke-WebRequest -Uri $url -OutFile $outfile
 Start-Process -FilePath $outfile -ArgumentList "/extract `"C:\Program Files\Spotify`"" -wait
 
 
-$TargetFile = "$env:ProgramFiles\Spotify\Spotify.exe"
+$TargetFile = "C:\Program Files\Spotify\Spotify.exe"
 $ShortcutFile = "$env:AllUsersProfile\Microsoft\Windows\Start Menu\Programs\Spotify.lnk"
 $WScriptShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WScriptShell.CreateShortcut($ShortcutFile)
