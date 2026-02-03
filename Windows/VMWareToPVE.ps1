@@ -188,3 +188,4 @@ if ($null -ne $vioscsiInf) {
 }
 
 Write-OK "Script Complete. Please run enable-vioscsi-to-load-on-boot.ps1 to finish loading the SCSI driver for first boot."
+#If you are missing the above script check out https://github.com/croit/load-virtio-scsi-on-boot/tree/main
